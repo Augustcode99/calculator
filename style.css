@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: sans-serif;
 }
 
 body {
@@ -35,6 +36,7 @@ button {
   color: white;
   background: #333333;
   font-size: 2rem;
+  cursor: pointer;
 }
 
 button:nth-child(4n) {
@@ -51,4 +53,18 @@ button:nth-child(3) {
 #zero {
   width: 180px;
   border-radius: 45px;
+}
+
+.printHere {
+  border: 2px solid red;
+  color: rgb(255, 255, 255);
+  font-size: 4rem;
+  display: grid;
+  place-items: end;
+  padding: 0.75rem;
+  width: 23rem;
+}
+
+.printHere p {
+  overflow-wrap: break-word;
 }
