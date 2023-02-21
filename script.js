@@ -12,22 +12,24 @@
 //create an array of buttons with queryselectorall and add a forall loop
 // to add event listeners to all of them
 
+var firstNum;
+
 buttonNodeList = document.querySelectorAll("button");
 buttonArray = Array.from(buttonNodeList);
 
+// if (!isNaN(Number(button.innerText)))
 buttonArray.forEach((button) => {
   button.addEventListener("click", () => {
-    console.log(button.innerText);
-    //here check if the innertext is a number
-    //if its not a number RETURN
-    //when its a number create a new element
-    //keep appending numbers to this element
-    //when a string is clicked create new element
-    //when = is clicked do the math and print
     if (!isNaN(Number(button.innerText))) {
-      let newVar = document.createElement("p");
-    } else {
-      return;
+      let theScreen = document.querySelector(".printHere p");
+      theScreen.addEventListener("click", () => {
+        console.log("theScreen");
+      });
+      let display = document.createElement("p");
+      let thisDig = Number(button.innerText);
+      display.append(thisDig);
+      theScreen.innerText = display;
+    } else if (button.innerText === "+" && firstNum) {
     }
   });
 });
