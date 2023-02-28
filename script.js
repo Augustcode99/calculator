@@ -21,14 +21,8 @@ buttonArray = Array.from(buttonNodeList);
 buttonArray.forEach((button) => {
   button.addEventListener("click", () => {
     if (!isNaN(Number(button.innerText))) {
-      let theScreen = document.querySelector(".printHere p");
-      theScreen.addEventListener("click", () => {
-        console.log("theScreen");
-      });
-      let display = document.createElement("p");
-      let thisDig = Number(button.innerText);
-      display.append(thisDig);
-      theScreen.innerText = display;
+      let theScreen = document.querySelector("#printP");
+      theScreen.append(button.innerText);
     } else if (button.innerText === "+" && firstNum) {
     }
   });
