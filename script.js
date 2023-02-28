@@ -20,8 +20,10 @@ buttonArray = Array.from(buttonNodeList);
 // if (!isNaN(Number(button.innerText)))
 buttonArray.forEach((button) => {
   button.addEventListener("click", () => {
-    if (!isNaN(Number(button.innerText))) {
-      let theScreen = document.querySelector("#printP");
+    let theScreen = document.querySelector("#printP");
+    if (button.innerText === "AC") {
+      theScreen.innerText = "";
+    } else if (!isNaN(Number(button.innerText))) {
       theScreen.append(button.innerText);
     } else if (button.innerText === "+" && firstNum) {
     }
