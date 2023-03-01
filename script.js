@@ -3,18 +3,23 @@ buttonNodeList = document.querySelectorAll("button");
 buttonArray = Array.from(buttonNodeList);
 
 //write a function that will do the calculations
-let calculate = (button) => {
+const calculate = (button) => {
   console.log("a button was clicked");
   let theScreen = document.querySelector("#printP");
-  let Num;
-
+  let total;
   if (!isNaN(button.innerText)) {
-    theScreen.append(button.innerText);
+    while (theScreen.innerText.length < 10) {
+      theScreen.append(button.innerText);
+      total = theScreen.innerText;
+      console.log(total);
+      break;
+    }
   } else {
     switch (button.innerText) {
       case "AC":
         console.log("clearing display");
         theScreen.innerText = "";
+        total = "";
         break;
       case "÷":
         console.log("division selected");
